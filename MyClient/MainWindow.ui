@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1098</width>
+    <height>738</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 设置窗口的整体背景颜色 */
+QWidget#MainWindow {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+/* 设置Label控件的样式 */
+QLabel {
+    color: #ffffff;
+    font-size: 16px;  /* 默认字体大小 */
+}
+
+/* 增大“本地文件”和“远程设备”两个Label控件的文字 */
+QLabel#Label_LocalFIle,
+QLabel#Label_remoteFacility {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 设置按钮控件的样式 */
+QPushButton {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #5a5a5a;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #4a4a4a;
+}
+
+QPushButton:pressed {
+    background-color: #2a2a2a;
+    border: 1px solid #7a7a7a;
+}
+
+/* 设置QComboBox控件的样式 */
+QComboBox {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #5a5a5a;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    selection-background-color: #5a5a5a;
+}
+
+/* 设置QTableView控件的样式 */
+QTableView {
+    background-color: #2b2b2b;
+    gridline-color: #5a5a5a;
+    color: #ffffff;
+}
+
+QTableView QHeaderView::section {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 5px;
+    border: 1px solid #5a5a5a;
+}
+
+/* 设置QProgressBar控件的样式 */
+QProgressBar {
+    background-color: #3a3a3a;
+    border: 1px solid #5a5a5a;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #66ccff, stop: 1 #0033cc
+    );
+    border-radius: 5px;
+}
+
+/* 设置QSpacerItem的样式（可选，主要用于布局管理，不常需要特定样式） */
+/* QSpacerItem {
+    background-color: transparent;  // 一般保持透明
+} */
+
+/* 设置特定按钮的样式 */
+QPushButton#btn_Back, QPushButton#btn_Fresh, QPushButton#btn_NewFile,
+QPushButton#btn_RemoteFileBack, QPushButton#btn_RemoteFIleFresh, QPushButton#btn_RemoteNewFile,
+QPushButton#btn_StartAll, QPushButton#btn_PauseAll, QPushButton#btn_CanselAll {
+    width: 30px;
+    height: 30px;
+}
+
+QPushButton#btn_Transfer {
+    min-width: 70px;
+    max-width: 40px;
+}
+
+/* 设置QWidget的背景渐变效果 */
+QWidget#widget, QWidget#widget_4, QWidget#widget_5, QWidget#widget_6, QWidget#widget_7, QWidget#widget_8 {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #3a3a3a, stop: 1 #2b2b2b
+    );
+    border-radius: 10px;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget_9" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>1080</width>
+       <height>720</height>
+      </size>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="Label_LocalFIle">
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>本地文件</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>602</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="Label_remoteFacility">
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei UI</family>
+             <pointsize>-1</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>远程设备</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_4" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QWidget" name="widget_2" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>350</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_Back">
+              <property name="minimumSize">
+               <size>
+                <width>30</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>&lt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_Fresh">
+              <property name="minimumSize">
+               <size>
+                <width>45</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>刷新</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_NewFile">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>+</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Cox_LocalFileCox">
+              <property name="minimumSize">
+               <size>
+                <width>209</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>209</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_Transfer">
+           <property name="minimumSize">
+            <size>
+             <width>92</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>62</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#006CBE</string>
+           </property>
+           <property name="text">
+            <string>传输</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_3" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>350</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QPushButton" name="btn_RemoteFileBack">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>&lt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_RemoteFIleFresh">
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>刷新</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_RemoteNewFile">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>+</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Cox_RemoteFileCox"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_5" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>200</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QTableView" name="Tbw_LocalFile">
+           <property name="styleSheet">
+            <string notr="true">/* 设置QScrollBar的样式 */
+QScrollBar:horizontal {
+    background: #2b2b2b;
+    height: 15px;
+    margin: 3px 15px 3px 15px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #5a5a5a;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: #3a3a3a;
+    width: 15px;
+    border: 1px solid #5a5a5a;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+QScrollBar:vertical {
+    background: #2b2b2b;
+    width: 15px;
+    margin: 15px 3px 15px 3px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: #5a5a5a;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: #3a3a3a;
+    height: 15px;
+    border: 1px solid #5a5a5a;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableView" name="Tbw_RemoteFile">
+           <property name="styleSheet">
+            <string notr="true">/* 设置QScrollBar的样式 */
+QScrollBar:horizontal {
+    background: #2b2b2b;
+    height: 15px;
+    margin: 3px 15px 3px 15px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #5a5a5a;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: #3a3a3a;
+    width: 15px;
+    border: 1px solid #5a5a5a;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+QScrollBar:vertical {
+    background: #2b2b2b;
+    width: 15px;
+    margin: 15px 3px 15px 3px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: #5a5a5a;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: #3a3a3a;
+    height: 15px;
+    border: 1px solid #5a5a5a;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_7" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="btn_CanselAll">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>82</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>取消全部</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_StartAll">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>82</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>开始全部</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_PauseAll">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>82</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>暂停全部</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_RemoteClientsShow">
+           <property name="text">
+            <string>可连接的远程设备&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_6" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QTableView" name="Tbw_State"/>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_8" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="Pb_SendFileName">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QProgressBar" name="Pb_Progressbar">
+              <property name="value">
+               <number>24</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
